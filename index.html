@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Live preview</title>
+      <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+      <link rel="stylesheet" href="style.css" />
+      <script src="https://cdn.tailwindcss.com"></script>
+      <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+      <link
+         rel="stylesheet"
+         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+   </head>
+   <body>
+      <div class="container flex justify-around">
+         <div class="component">
+            <h2 class="p-4 my-4 font-medium">
+               <i class="fa-regular fa-floppy-disk"></i> Compponents
+               <h1 class="mb-2 text-center font-bold">Items</h1>
+            </h2>
+
+            <button
+               class="bg-yellow-100 hover:bg-yellow-200 border text-yellow-600 font-semibold rounded px-8 py-2 mx-0 mb-2 outline-none focus:shadow-outline"
+               id="toggleButton"
+            >
+               Heading
+            </button>
+
+            <fieldset id="contentSection" class="hidden">
+               <label for="inputField" class="font-medium">Header:</label>
+               <input type="text" class="mt-1 w-full" id="inputField" />
+
+               <!-- Text alignment -->
+               <div class="flex justify-between">
+                  <div
+                     class="flex py-2 justify-start rounded-lg text-lg"
+                     role="group"
+                  >
+                     <button
+                        id="changeAlignmentButtonl"
+                        class="border hover:bg-gray-200 border-r-0 border-black bg-white rounded-l-lg px-4 py-2 mx-0 outline-none focus:shadow-outline"
+                     >
+                        <i class="fa-solid fa-align-left"></i>
+                        Left
+                     </button>
+                     <button
+                        id="changeAlignmentButtonc"
+                        class="border hover:bg-gray-200 border-black bg-white px-4 py-2 mx-0 outline-none focus:shadow-outline"
+                     >
+                        <i class="fa-solid fa-align-center"></i>
+                        Center
+                     </button>
+                     <button
+                        id="changeAlignmentButtonr"
+                        class="border hover:bg-gray-200 border-l-0 border-black bg-white rounded-r-lg px-4 py-2 mx-0 outline-none focus:shadow-outline"
+                     >
+                        <i class="fa-solid fa-align-right"></i>
+                        Right
+                     </button>
+                  </div>
+                  <!-- Color -->
+                  <div
+                     class="flex justify-end py-2 rounded-lg text-lg"
+                     role="group"
+                  >
+                     <button
+                        id="changeAlignmentButtong"
+                        class="border hover:bg-green-100 border-r-0 border-black bg-white rounded-l-lg px-4 py-0 mx-0 outline-none focus:shadow-outline"
+                     >
+                        <i
+                           class="fa-solid fa-circle"
+                           style="color: #00ff00"
+                        ></i>
+                        Green
+                     </button>
+                     <button
+                        id="changeAlignmentButtonblue"
+                        class="border hover:bg-blue-100 border-black bg-white px-4 py-0 mx-0 outline-none focus:shadow-outline"
+                     >
+                        <i
+                           class="fa-solid fa-circle"
+                           style="color: #000080"
+                        ></i>
+                        Blue
+                     </button>
+                     <button
+                        id="changeAlignmentButtonb"
+                        class="border hover:bg-gray-100 border-l-0 border-black bg-white rounded-r-lg px-4 py-0 mx-0 outline-none focus:shadow-outline"
+                     >
+                        <i class="fa-solid fa-circle" style="color: #000"></i>
+                        Black
+                     </button>
+                  </div>
+               </div>
+            </fieldset>
+
+            <button
+               class="rounded hover:bg-green-200 bg-green-100 text-green-600 font-semibold border px-7 py-2 mx-0 outline-none focus:shadow-outline"
+               id="toggleButton2"
+            >
+               Image
+            </button>
+            <fieldset id="contentSection2" class="hidden py-4">
+               <input
+                  type="file"
+                  id="imageInput"
+                  class="bg-white rounded p-2 w-full"
+                  accept="image/*"
+               />
+            </fieldset>
+            <button
+               class="rounded hover:bg-bule-200 bg-blue-100 text-blue-600 font-semibold border px-7 py-2 mx-0 outline-none focus:shadow-outline"
+               id="toggleButton1"
+            >
+               Description
+            </button>
+            <fieldset id="contentSection1" class="hidden">
+               <label for="inputField1">Description:</label>
+               <textarea type="text" class="w-full mt-2" id="inputField1">
+               </textarea>
+            </fieldset>
+         </div>
+
+         <div class="preview" id="capture">
+            <h2 class="p-4 my-4 font-medium">
+               <i class="fa-regular fa-file-powerpoint"></i> Preview
+            </h2>
+            <!-- heading output -->
+            <input
+               type="text"
+               id="outputField"
+               class="font-semibold w-full text-3xl bg-inherit border-0"
+               readonly
+            />
+
+            <!-- img -->
+            <img id="imagePreview" class="w-3/4" src="#" />
+            <!-- img end -->
+
+            <!-- description output -->
+            <input
+               type="text"
+               id="outputField1"
+               class="w-full bg-inherit border-0"
+               readonly
+            />
+            <!-- description output -->
+            <br />
+
+            <button
+               class="bg-yellow-50 hover:bg-yellow-100 border text-yellow-600 font-semibold rounded px-8 py-2 mx-0 mb-2 outline-none focus:shadow-outline"
+               id="downloadBtn"
+            >
+               Download
+            </button>
+         </div>
+      </div>
+
+      <script src="script.js"></script>
+   </body>
+</html>
